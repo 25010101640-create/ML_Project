@@ -32,9 +32,9 @@ export const predictFraud = async (claimData, onWakingUp) => {
     return await request(FAST_TIMEOUT_MS);
   } catch (firstError) {
     const isServerWaking =
-      firstError.code === 'ECONNABORTED' ||        // timed out while server boots
-      !firstError.response ||                      // network error / connection refused
-      firstError.response?.status >= 502;          // bad gateway / service unavailable
+      firstError.code === 'ECONNABORTED' ||
+      !firstError.response ||
+      firstError.response?.status >= 502;
 
     if (!isServerWaking) {
       throw new Error(
