@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// Create axios instance with dynamic base URL (supports Vercel/Netlify env vars)
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://ml-project-renish4.vercel.app';
 
 const API = axios.create({
@@ -10,21 +9,9 @@ const API = axios.create({
   },
 });
 
-// The backend is hosted on a free tier that sleeps after inactivity. The first
-// request then has to wait while the server boots (~30-60s), which is longer
-// than a normal API timeout. When that happens we retry once with a generous
-// window instead of failing, and tell the UI so it can show a friendly
-// "server waking up" message.
 const FAST_TIMEOUT_MS = 15000;
 const WAKE_TIMEOUT_MS = 120000;
 
-/**
- * Send claim data to Flask API for fraud prediction
- * @param {Object} claimData - The insurance claim form data
- * @param {Function} [onWakingUp] - Called when a sleeping server is detected
- *   and the patient retry has started, so the UI can inform the user.
- * @returns {Promise} - API response with prediction and probability
- */
 export const predictFraud = async (claimData, onWakingUp) => {
   const request = (timeout) => API.post('/predict', claimData, { timeout });
 
@@ -49,7 +36,7 @@ export const predictFraud = async (claimData, onWakingUp) => {
     } catch (secondError) {
       if (secondError.code === 'ECONNABORTED' || !secondError.response) {
         throw new Error(
-          'The server is still waking up from sleep. Please wait about a minute, then try again — your data is safe.'
+          'The server is still waking up from sleep. Please wait about a minute, then try again.'
         );
       }
       throw new Error(
