@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaHeart, FaShieldAlt } from 'react-icons/fa';
+import { FaHeart, FaShieldAlt } from 'react-icons/fa';
 import { SiFlask, SiReact, SiPython, SiScikitlearn } from 'react-icons/si';
 import './Footer.css';
 
@@ -55,30 +55,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 4 */}
-          <div className="footer__column">
-            <h4 className="footer__column-title">Connect</h4>
-            <div className="footer__socials">
-              <a 
-                href="https://github.com/elvishpatel/vehicle-insurance-fraud-detection" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="footer__social-link"
-                aria-label="GitHub Repository"
-              >
-                <FaGithub />
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/elvish-kansagara" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="footer__social-link"
-                aria-label="LinkedIn Profile"
-              >
-                <FaLinkedin />
-              </a>
-            </div>
-          </div>
+
+
         </div>
 
         <div className="footer__divider"></div>
