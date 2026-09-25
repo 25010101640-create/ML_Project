@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Create axios instance with dynamic base URL (supports Vercel/Netlify env vars)
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://ml-project-renish4.vercel.app';
 
 const API = axios.create({
   baseURL: API_BASE_URL,
