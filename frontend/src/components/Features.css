@@ -1,0 +1,109 @@
+.features {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.features__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.features__title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.features__subtitle {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--color-text-secondary);
+  max-width: 550px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.features__card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: 40px 32px;
+  position: relative;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.features__card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.features__card:hover {
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.features__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.features__card:hover::before {
+  width: 100%;
+}
+
+.features__card-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--color-accent);
+  margin-bottom: 24px;
+  border: 1px solid var(--color-border);
+}
+
+.features__card-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.features__card-description {
+  font-family: var(--font-body);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .features__grid {
+    grid-template-columns: 1fr;
+  }
+  .features__title {
+    font-size: 2.2rem;
+  }
+}

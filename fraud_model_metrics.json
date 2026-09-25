@@ -1,0 +1,106 @@
+{
+  "model": "ExtraTrees",
+  "sampling_method": "none",
+  "threshold": 0.5,
+  "threshold_rule": "max fraud F1 on out-of-fold training predictions (tolerance +/-0.005), ties -> highest fraud precision",
+  "validation_at_chosen_threshold": {
+    "Threshold": 0.5,
+    "Fraud_Precision": 0.6761,
+    "Fraud_Recall": 0.8434,
+    "Fraud_F1": 0.7506,
+    "Accuracy": 0.8612,
+    "Balanced_Accuracy": 0.8553,
+    "MCC": 0.6638,
+    "TP": 167.0,
+    "FP": 80.0,
+    "FN": 31.0,
+    "TN": 522.0
+  },
+  "cross_validated_training_metrics": {
+    "Accuracy": 0.8613,
+    "Precision": 0.6791,
+    "Recall": 0.8437,
+    "F1": 0.7508,
+    "ROC_AUC": 0.8836,
+    "PR_AUC": 0.7259,
+    "Balanced_Accuracy": 0.8554,
+    "MCC": 0.6655,
+    "PR_AUC_Std": 0.0359
+  },
+  "test_metrics": {
+    "Threshold": 0.5,
+    "Accuracy": 0.825,
+    "Precision": 0.625,
+    "Recall": 0.7142857142857143,
+    "F1": 0.6666666666666666,
+    "ROC_AUC": 0.8417353696445465,
+    "PR_AUC": 0.6123604503863735,
+    "Balanced_Accuracy": 0.7876064333017976,
+    "MCC": 0.5509850891677839,
+    "Fraud_Precision": 0.625,
+    "Fraud_Recall": 0.7142857142857143,
+    "Fraud_F1": 0.6666666666666666,
+    "TN": 130,
+    "FP": 21,
+    "FN": 14,
+    "TP": 35,
+    "N": 200,
+    "Fraud_Support": 49
+  },
+  "test_metrics_at_0.5": {
+    "Threshold": 0.5,
+    "Accuracy": 0.825,
+    "Precision": 0.625,
+    "Recall": 0.7142857142857143,
+    "F1": 0.6666666666666666,
+    "ROC_AUC": 0.8417353696445465,
+    "PR_AUC": 0.6123604503863735,
+    "Balanced_Accuracy": 0.7876064333017976,
+    "MCC": 0.5509850891677839,
+    "Fraud_Precision": 0.625,
+    "Fraud_Recall": 0.7142857142857143,
+    "Fraud_F1": 0.6666666666666666,
+    "TN": 130,
+    "FP": 21,
+    "FN": 14,
+    "TP": 35,
+    "N": 200,
+    "Fraud_Support": 49
+  },
+  "classification_report": {
+    "NOT FRAUD": {
+      "precision": 0.9027777777777778,
+      "recall": 0.8609271523178808,
+      "f1-score": 0.8813559322033898,
+      "support": 151.0
+    },
+    "FRAUD": {
+      "precision": 0.625,
+      "recall": 0.7142857142857143,
+      "f1-score": 0.6666666666666666,
+      "support": 49.0
+    },
+    "accuracy": 0.825,
+    "macro avg": {
+      "precision": 0.7638888888888888,
+      "recall": 0.7876064333017976,
+      "f1-score": 0.7740112994350282,
+      "support": 200.0
+    },
+    "weighted avg": {
+      "precision": 0.8347222222222223,
+      "recall": 0.825,
+      "f1-score": 0.8287570621468926,
+      "support": 200.0
+    }
+  },
+  "test_set": {
+    "rows": 200,
+    "fraud": 49,
+    "not_fraud": 151
+  },
+  "evaluation_note": "the test set was not used for preprocessing, resampling, tuning, threshold selection or model selection and was scored exactly once",
+  "reload_test": "PASSED",
+  "unseen_data_test": "PASSED",
+  "generated_utc": "2026-09-24T06:05:05.035043+00:00"
+}

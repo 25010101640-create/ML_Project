@@ -1,0 +1,294 @@
+.prediction {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.prediction__header {
+  text-align: center;
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prediction__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.prediction__header h2 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.prediction__header p {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  max-width: 550px;
+}
+
+/* Presets */
+.prediction__presets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  padding: 24px 32px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  flex-wrap: wrap;
+}
+
+.prediction__presets-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.prediction__presets-label svg {
+  color: var(--color-accent);
+}
+
+.prediction__preset-btn {
+  padding: 10px 24px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.prediction__preset-btn:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+.prediction__preset-btn--safe { border-left: 3px solid var(--color-success); }
+.prediction__preset-btn--fraud { border-left: 3px solid var(--color-danger); }
+
+/* Form Card */
+.prediction__card {
+  max-width: 1040px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 56px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.prediction__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-accent);
+}
+
+.prediction__form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.prediction__section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.prediction__section-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+  letter-spacing: -0.01em;
+}
+
+.prediction__section-title svg {
+  color: var(--color-accent);
+}
+
+.prediction__section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.prediction__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prediction__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Classic underlined inputs */
+.prediction__input,
+.prediction__select {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  padding: 12px 0;
+  color: var(--color-text);
+  font-size: 1rem;
+  font-family: var(--font-body);
+  transition: border-color 0.3s ease;
+  outline: none;
+  border-radius: 0;
+}
+
+.prediction__select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%2357534E'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 24px;
+}
+
+.prediction__select option {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.prediction__input:focus,
+.prediction__select:focus {
+  border-bottom-color: var(--color-accent);
+  border-bottom-width: 2px;
+}
+
+.prediction__input::placeholder {
+  color: var(--color-text-secondary);
+  font-style: italic;
+  opacity: 0.6;
+}
+
+/* Submit */
+.prediction__submit-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.prediction__submit {
+  padding: 18px 64px;
+  background: var(--color-text);
+  color: var(--color-bg);
+  border: 2px solid var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.25s ease;
+  min-width: 260px;
+  justify-content: center;
+}
+
+.prediction__submit:hover:not(:disabled) {
+  background: transparent;
+  color: var(--color-text);
+}
+
+.prediction__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.prediction__submit .spinner {
+  animation: spin 1s linear infinite;
+}
+
+.prediction__error {
+  background: transparent;
+  border: 1px solid var(--color-danger);
+  padding: 16px 20px;
+  color: var(--color-danger);
+  text-align: center;
+  font-weight: 600;
+}
+
+.prediction__waking {
+  background: transparent;
+  border: 1px solid var(--color-warning);
+  padding: 16px 20px;
+  color: var(--color-warning);
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.prediction__waking .spinner {
+  animation: spin 1s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .prediction__section-grid {
+    grid-template-columns: 1fr;
+  }
+  .prediction__card {
+    padding: 32px 24px;
+  }
+  .prediction__header h2 {
+    font-size: 2.2rem;
+  }
+}
